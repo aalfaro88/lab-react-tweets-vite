@@ -38,11 +38,14 @@ const tweetsArray = [
 ];
 
 function App() {
-  return (
-    <div className="App">
-      <Tweet />
-    </div>
-  );
+  const tweetComponents = [];
+
+  for (let i = 0; i < tweetsArray.length; i++) {
+    const tweet = tweetsArray[i];
+    tweetComponents.push(<Tweet key={i} tweet={tweet} />);
+  }
+
+  return <div className="App">{tweetComponents}</div>;
 }
 
 export default App;
